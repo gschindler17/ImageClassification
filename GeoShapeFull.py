@@ -19,19 +19,21 @@ import pathlib
 
 # %%
 # Used for importing the dataset off of the web
-dataset_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+dataset_url = "https://data.mendeley.com/datasets/wzr2yv7r53/1"
 
+print("Stuck1")
 data_dir = tf.keras.utils.get_file('2D_geo_shape.tar', origin=dataset_url, extract=True)
-
+print("Stuck2")
 # Should print "data_dir: C:\Users\Garrett\.keras\datasets\flower_photos.tar"
 print("data_dir: {}".format(data_dir))
 
 data_dir = pathlib.Path(data_dir).with_suffix('')
 # Should print "data_dir: C:\Users\Garrett\.keras\datasets\flower_photos"
 print("data_dir: {}".format(data_dir))
-
+print("Stuck3")
 image_data = list(data_dir.glob('*/*.jpg'))
 image_count = len(list(data_dir.glob('*/*.jpg')))
+print("Stuck4")
 print("Number of images found: {}".format(image_count))
 
 
